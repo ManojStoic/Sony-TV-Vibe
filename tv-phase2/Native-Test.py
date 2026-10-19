@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parent.parent
 parser=ArgumentParser()
 parser.add_argument('--device',required=True,help='Authorized ADB serial or host:port')
 parser.add_argument('--adb',default=str(ROOT/'tv-phase1/platform-tools/adb.exe'))
-parser.add_argument('--report-dir',default=str(ROOT/'tv-phase1/reports/native-test-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')))
+parser.add_argument('--report-dir',default=str(ROOT/'tv-phase1/reports'/('native-test-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S'))))
 parser.add_argument('action',choices=('install','launch','capture'))
 parser.add_argument('name',nargs='?',help='Required capture name')
 args=parser.parse_args()
